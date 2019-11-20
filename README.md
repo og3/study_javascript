@@ -65,6 +65,25 @@ scores[1] = 6
 }
 ```
 ハッシュのような感じだが少し違う
+# オブジェクトへのアクセス
+```
+{
+  // オブジェクト
+
+  const player = {
+    name: 'taguchi',
+    score: 32,
+  };
+   // 呼び出し
+   console.log(player.name);
+   // 再代入
+   player.score = 100;
+   // プロパティの追加
+   player.email = 'taguchi@gmail.com';
+   // プロパティの削除
+   delete player.score;
+}
+```
 # ブロック
 ```
 {
@@ -72,3 +91,29 @@ scores[1] = 6
 }
 ```
 変数のスコープはブロック内で宣言された変数はブロック内でしか使えない
+# クラス
+```
+'use strict'; {
+    class Player {
+        // 初期化処理
+        constructor(name, score) {
+            this.name = name;
+            this.score = score;
+        }
+
+        showInfo() {
+            console.log(`name: ${this.name} score: ${this.score}`);
+        }
+
+        static showVersion() {
+            console.log("バージョンを表示します");
+        }
+    }
+    // インスタンスの作成
+    const Player1 = new Player("player1", 50)
+        // メソッドの呼び出し
+    Player1.showInfo();
+    // staticの呼び出し
+    Player.showVersion();
+}
+```
