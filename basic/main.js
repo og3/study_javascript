@@ -11,13 +11,23 @@
         }
 
         static showVersion() {
-            console.log("バージョンを表示します");
+                console.log("バージョンを表示します");
+            }
+            // 子クラスの定義
+            // Playerクラスを継承する
+    }
+    class SoccerPlayer extends Player {
+        // 初期化処理
+        constructor(name, score, number) {
+            // 親クラスのconstructorを使用する
+            super(name, score);
+            this.number = number;
+        }
+        Kick(name) {
+            console.log(`${this.name}選手、ごーる！`);
         }
     }
-    // インスタンスの作成
-    const Player1 = new Player("player1", 50)
-        // メソッドの呼び出し
-    Player1.showInfo();
-    // staticの呼び出し
-    Player.showVersion();
+    const ojison = new SoccerPlayer('ojison', 5, 10);
+    ojison.Kick();
+    console.log(ojison);
 }
